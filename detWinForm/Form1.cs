@@ -22,6 +22,9 @@ namespace detWinForm
         public double[,] tabl;
 
         int k;
+
+
+
         private void Form1_Load(object sender, EventArgs e)
         {
             
@@ -138,12 +141,34 @@ namespace detWinForm
 
         private void button1_Click(object sender, EventArgs e)
         {
+           if( dataGridView1.ColumnCount >0)
             {
-                // Створення нового екземпляру форми
-                tabl fm1 = new tabl();
-                // Відображення форми
-                fm1.Show();
+                dataGridView1.Columns.Clear();
             }
+
+           int l = tabl.GetLength(0);
+
+            for (int i = 0; i < l; i++)
+            {
+
+                dataGridView1.Columns.Add((i+1).ToString(), (i+1).ToString());
+            
+            }
+            int h = tabl.GetLength(1);
+
+            for (int i = 0; i < h; i++)
+            {
+                string[] ss = new string[l];
+                for (int j  = 0; j  < l; j ++)
+                {
+                    ss[j] = tabl[i, j].ToString();
+                }
+                dataGridView1.Rows.Add(ss);
+                    
+            }
+
+
+
         }
     }
 }
