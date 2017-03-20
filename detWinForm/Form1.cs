@@ -20,6 +20,7 @@ namespace detWinForm
         }
         Random r = new Random();
         public double[,] tabl;
+
         int k;
         private void Form1_Load(object sender, EventArgs e)
         {
