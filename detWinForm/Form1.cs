@@ -25,7 +25,7 @@ namespace detWinForm
         {
             
         }
-        private void txtBox_Leave(TextBox txtBox, string value)
+        public void txtBox_Leave(TextBox txtBox, string value)
         {
             try
             {
@@ -113,37 +113,68 @@ namespace detWinForm
         private void button5_Click(object sender, EventArgs e)
         {
             int b = Convert.ToInt32(textBox3.Text);
-            tabl = new double[b, b];
-            for (int i = 0; i < b; i++)
+            if (b ==0)
             {
-                for (int j = 0; j < b; j++)
-                {
-                    tabl[i, j] = r.Next(0, 10);
-                   
-                }
+                MessageBox.Show("Введіть розмірність матриці. Число більше 1!"); // виведення повідомлення
             }
-            textBox4.Text = Convert.ToString(Determinant1(tabl));
+            else if (b < 0)
+            {
+                MessageBox.Show("Розмірність матриці не має бути від'ємна!"); // виведення повідомлення
+            }
+            else
+            {
+                tabl = new double[b, b];
+                for (int i = 0; i < b; i++)
+                {
+                    for (int j = 0; j < b; j++)
+                    {
+                        tabl[i, j] = r.Next(0, 10);
+                    }
+                }
+                textBox4.Text = Convert.ToString(Determinant1(tabl));
+            }
         }
         private void button1_Click(object sender, EventArgs e)
         {
-           if( dataGridView1.ColumnCount >0)
+            int b = Convert.ToInt32(textBox3.Text);
+            if (b ==0)
             {
-                dataGridView1.Columns.Clear();
+                MessageBox.Show("Введіть розмірність матриці. Число більше 1!"); // виведення повідомлення
             }
-           int l = tabl.GetLength(0);
-            for (int i = 0; i < l; i++)
+            else if (b < 0)
             {
-                dataGridView1.Columns.Add((i+1).ToString(), (i+1).ToString());
+                MessageBox.Show("Розмірність матриці не має бути від'ємна!"); // виведення повідомлення
             }
-            int h = tabl.GetLength(1);
-            for (int i = 0; i < h; i++)
+            else
             {
-                string[] ss = new string[l];
-                for (int j  = 0; j  < l; j ++)
+                tabl = new double[b, b];
+                for (int i = 0; i < b; i++)
                 {
-                    ss[j] = tabl[i, j].ToString();
+                    for (int j = 0; j < b; j++)
+                    {
+                        tabl[i, j] = r.Next(0, 10);
+                    }
                 }
-                dataGridView1.Rows.Add(ss);
+                textBox4.Text = Convert.ToString(Determinant1(tabl));
+                if (dataGridView1.ColumnCount > 0)
+                {
+                    dataGridView1.Columns.Clear();
+                }
+                int l = tabl.GetLength(0);
+                for (int i = 0; i < l; i++)
+                {
+                    dataGridView1.Columns.Add((i + 1).ToString(), " ");
+                }
+                int h = tabl.GetLength(1);
+                for (int i = 0; i < h; i++)
+                {
+                    string[] ss = new string[l];
+                    for (int j = 0; j < l; j++)
+                    {
+                        ss[j] = tabl[i, j].ToString();
+                    }
+                    dataGridView1.Rows.Add(ss);
+                }
             }
         }
 
@@ -154,26 +185,51 @@ namespace detWinForm
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.ColumnCount > 0)
+            int b = Convert.ToInt32(textBox3.Text);
+            if (b ==0)
             {
-                dataGridView1.Columns.Clear();
+                MessageBox.Show("Не існує матриці для транспортування!");
             }
-            int l = tabl.GetLength(0);
-            for (int i = 0; i < l; i++)
+            else if (b < 0)
             {
-                dataGridView1.Columns.Add((i + 1).ToString(), (i + 1).ToString());
+                MessageBox.Show("Розмірність матриці не має бути від'ємна!"); // виведення повідомлення
             }
-            int h = tabl.GetLength(1);
-            for (int i = 0; i < h; i++)
+            else
             {
-                string[] ss = new string[l];
-                for (int j = 0; j < l; j++)
+                tabl = new double[b, b];
+                for (int i = 0; i < b; i++)
                 {
-                    ss[j] = tabl[j, i].ToString();
+                    for (int j = 0; j < b; j++)
+                    {
+                        tabl[i, j] = r.Next(0, 10);
+
+                    }
                 }
-                dataGridView1.Rows.Add(ss);
+                textBox4.Text = Convert.ToString(Determinant1(tabl));
+                if (dataGridView1.ColumnCount > 0)
+                {
+                    dataGridView1.Columns.Clear();
+                }
+                int l = tabl.GetLength(0);
+                for (int i = 0; i < l; i++)
+                {
+                    dataGridView1.Columns.Add((i + 1).ToString()," ");
+                    
+                }
+                int h = tabl.GetLength(1);
+                for (int i = 0; i < h; i++)
+                {
+                    string[] ss = new string[l];
+                    for (int j = 0; j < l; j++)
+                    {
+                        ss[j] = tabl[j, i].ToString();
+                    }
+                    dataGridView1.Rows.Add(ss);
+                }
             }
             
         }
+
+        
     }
 }
