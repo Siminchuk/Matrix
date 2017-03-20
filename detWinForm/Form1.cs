@@ -12,7 +12,6 @@ namespace detWinForm
 {
     public partial class Form1 : Form
     {
-        
         public Form1()
         {
             InitializeComponent();
@@ -20,16 +19,12 @@ namespace detWinForm
         }
         Random r = new Random();
         public double[,] tabl;
-
+        
         int k;
-
-
-
         private void Form1_Load(object sender, EventArgs e)
         {
             
         }
-
         private void txtBox_Leave(TextBox txtBox, string value)
         {
             try
@@ -43,14 +38,10 @@ namespace detWinForm
                 txtBox.Focus(); // повернення фокусу в поле введення
             }
         }
-
         private void button1_Leave(object sender, EventArgs e)
         {
 
         }
-
-        
-
         public int SignOfElement(int i, int j)
         {
             if ((i + j) % 2 == 0)
@@ -88,7 +79,7 @@ namespace detWinForm
             }
             return output;
         }
-        public double Determinant(double[,] input)
+        public double Determinant1(double[,] input)
         {
             int order = int.Parse(System.Math.Sqrt(input.Length).ToString());
             if (order > 2)
@@ -97,7 +88,7 @@ namespace detWinForm
                 for (int j = 0; j < order; j++)
                 {
                     double[,] Temp = CreateSmallerMatrix(input, 0, j);
-                    value = value + input[0, j] * (SignOfElement(0, j) * Determinant(Temp));
+                    value = value + input[0, j] * (SignOfElement(0, j) * Determinant1(Temp));
                 }
                 return value;
             }
@@ -110,21 +101,18 @@ namespace detWinForm
                 return (input[0, 0]);
             }
         }
-
+        
         private void textBox3_Leave(object sender, EventArgs e)
         {
             txtBox_Leave(textBox3, Convert.ToString(k));
         }
-
         private void textBox4_Leave(object sender, EventArgs e)
         {
 
         }
-
         private void button5_Click(object sender, EventArgs e)
         {
             int b = Convert.ToInt32(textBox3.Text);
-            
             tabl = new double[b, b];
             for (int i = 0; i < b; i++)
             {
@@ -133,29 +121,21 @@ namespace detWinForm
                     tabl[i, j] = r.Next(0, 10);
                    
                 }
-                
             }
-            
-            textBox4.Text = Convert.ToString(Determinant(tabl));
+            textBox4.Text = Convert.ToString(Determinant1(tabl));
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
            if( dataGridView1.ColumnCount >0)
             {
                 dataGridView1.Columns.Clear();
             }
-
            int l = tabl.GetLength(0);
-
             for (int i = 0; i < l; i++)
             {
-
                 dataGridView1.Columns.Add((i+1).ToString(), (i+1).ToString());
-            
             }
             int h = tabl.GetLength(1);
-
             for (int i = 0; i < h; i++)
             {
                 string[] ss = new string[l];
@@ -164,11 +144,36 @@ namespace detWinForm
                     ss[j] = tabl[i, j].ToString();
                 }
                 dataGridView1.Rows.Add(ss);
-                    
             }
+        }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
-
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.ColumnCount > 0)
+            {
+                dataGridView1.Columns.Clear();
+            }
+            int l = tabl.GetLength(0);
+            for (int i = 0; i < l; i++)
+            {
+                dataGridView1.Columns.Add((i + 1).ToString(), (i + 1).ToString());
+            }
+            int h = tabl.GetLength(1);
+            for (int i = 0; i < h; i++)
+            {
+                string[] ss = new string[l];
+                for (int j = 0; j < l; j++)
+                {
+                    ss[j] = tabl[j, i].ToString();
+                }
+                dataGridView1.Rows.Add(ss);
+            }
+            
         }
     }
 }
