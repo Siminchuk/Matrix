@@ -1,9 +1,0 @@
-D:\КПІ\Інформатика\Проекти\det\detWinFormMain\bin\Debug\detWinFormMain.exe.config
-D:\КПІ\Інформатика\Проекти\det\detWinFormMain\obj\Debug\detWinFormMain.csprojResolveAssemblyReference.cache
-D:\КПІ\Інформатика\Проекти\det\detWinFormMain\obj\Debug\detWinFormMain.Form1.resources
-D:\КПІ\Інформатика\Проекти\det\detWinFormMain\obj\Debug\detWinFormMain.Properties.Resources.resources
-D:\КПІ\Інформатика\Проекти\det\detWinFormMain\obj\Debug\detWinFormMain.csproj.GenerateResource.Cache
-D:\КПІ\Інформатика\Проекти\det\detWinFormMain\bin\Debug\detWinFormMain.exe
-D:\КПІ\Інформатика\Проекти\det\detWinFormMain\bin\Debug\detWinFormMain.pdb
-D:\КПІ\Інформатика\Проекти\det\detWinFormMain\obj\Debug\detWinFormMain.exe
-D:\КПІ\Інформатика\Проекти\det\detWinFormMain\obj\Debug\detWinFormMain.pdb
