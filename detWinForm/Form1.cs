@@ -15,7 +15,6 @@ namespace detWinForm
         public Form1()
         {
             InitializeComponent();
-           
         }
         Random r = new Random();
         public double[,] tabl;
