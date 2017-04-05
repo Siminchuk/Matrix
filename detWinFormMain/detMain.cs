@@ -10,18 +10,33 @@ namespace detWinFormMain
     class detMain
     {
         Random r = new Random();
+        // ім'я не інформативне. поле повинне бути приватним. для доступу оформи властивість
         public double[,] tabl;
+        // не використовуєтья
         int k;
+        // не використовуєтья
         double dt;
+        // що це? 
         double det;
         string[] ss;
+        // ім'я не інформативне 
         int h;
+        // ім'я не інформативне
         int l;
+
+        // ім'я не інформативне
+        // додай документуючий коментар
+
+        /// <summary>
+        /// Це документуючий коментар. Він з'являється коли наводиш курсор на цю властивість об'єкта в програмному коді
+        /// Наприклад наведи на Det в формі в коді textBoxDet.Text = Convert.ToString(detm.Det);
+        /// </summary>
         public double Det
         {
             set { if (value > 0) det = value; }
             get { return det; }
         }
+
         public double High
         {
             get { return dt; } //доступ тільки для зчитування
