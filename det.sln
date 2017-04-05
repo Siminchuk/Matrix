@@ -12,7 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "detWinFormMain", "detWinFormMain\detWinFormMain.csproj", "{091BE23C-9CC4-4183-94B8-CE24B5B6A0BB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "detWinFormMain", "detWinFormMain\detWinFormMain.csproj", "{7F3A6ECE-A12A-4B3E-AB76-7D3AA095FFD2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,10 +28,10 @@ Global
 		{4DB3A7DF-9C4A-4DAE-92B1-12CA37F815A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DB3A7DF-9C4A-4DAE-92B1-12CA37F815A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DB3A7DF-9C4A-4DAE-92B1-12CA37F815A3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{091BE23C-9CC4-4183-94B8-CE24B5B6A0BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{091BE23C-9CC4-4183-94B8-CE24B5B6A0BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{091BE23C-9CC4-4183-94B8-CE24B5B6A0BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{091BE23C-9CC4-4183-94B8-CE24B5B6A0BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F3A6ECE-A12A-4B3E-AB76-7D3AA095FFD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F3A6ECE-A12A-4B3E-AB76-7D3AA095FFD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F3A6ECE-A12A-4B3E-AB76-7D3AA095FFD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F3A6ECE-A12A-4B3E-AB76-7D3AA095FFD2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
