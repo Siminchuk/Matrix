@@ -9,6 +9,7 @@ namespace detWinFormMain
 {
     class detMain
     {
+<<<<<<< HEAD
         Random dimension = new Random();
         public double[,] tabl;
         double det;
@@ -17,16 +18,44 @@ namespace detWinFormMain
         int numberLong;
         /// <summary>
         /// Детермінант матриці.
+=======
+        Random r = new Random();
+        // ім'я не інформативне. поле повинне бути приватним. для доступу оформи властивість
+        public double[,] tabl;
+        // не використовуєтья
+        int k;
+        // не використовуєтья
+        double dt;
+        // що це? 
+        double det;
+        string[] ss;
+        // ім'я не інформативне 
+        int h;
+        // ім'я не інформативне
+        int l;
+
+        // ім'я не інформативне
+        // додай документуючий коментар
+
+        /// <summary>
+        /// Це документуючий коментар. Він з'являється коли наводиш курсор на цю властивість об'єкта в програмному коді
+        /// Наприклад наведи на Det в формі в коді textBoxDet.Text = Convert.ToString(detm.Det);
+>>>>>>> f14726cc9a7ea0b93fb09abf8cbb379a2fc1faf4
         /// </summary>
         public double Det
         {
             set { if (value > 0) det = value; }
             get { return det; }
         }
+<<<<<<< HEAD
         /// <summary>
         /// Матриця.
         /// </summary>
         public string[] Matrix
+=======
+
+        public double High
+>>>>>>> f14726cc9a7ea0b93fb09abf8cbb379a2fc1faf4
         {
             get { return matrix; }
         }
