@@ -20,37 +20,37 @@ namespace detWinFormMain
         }
         private void buttonTrue_Click(object sender, EventArgs e)
         {
-            int H = Convert.ToInt32(textBoxHigh.Text);
-            detm.buttonTrue(H);
+            int High = Convert.ToInt32(textBoxHigh.Text);
+            detm.buttonTrue(High);
             textBoxDet.Text = Convert.ToString(detm.Det);
             if (dataGridViewMatrix.ColumnCount > 0)
             {
                 dataGridViewMatrix.Columns.Clear();
                 dataGridViewMatrixT.Columns.Clear();
             }
-            for (int i = 0; i < detm.L; i++)
+            for (int i = 0; i < detm.NumberLong; i++)
             {
                 dataGridViewMatrix.Columns.Add((i + 1).ToString(), " ");
             }
-            for (int i = 0; i < detm.H; i++)
+            for (int i = 0; i < detm.NumberHigh; i++)
             {
-                for (int j = 0; j < detm.L; j++)
+                for (int j = 0; j < detm.NumberLong; j++)
                 {
-                    detm.SS[j] = detm.tabl[i, j].ToString();
+                    detm.Matrix[j] = detm.tabl[i, j].ToString();
                 }
-                dataGridViewMatrix.Rows.Add(detm.SS);
+                dataGridViewMatrix.Rows.Add(detm.Matrix);
             }
-            for (int i = 0; i < detm.L; i++)
+            for (int i = 0; i < detm.NumberLong; i++)
             {
                 dataGridViewMatrixT.Columns.Add((i + 1).ToString(), " ");
             }
-            for (int i = 0; i < detm.H; i++)
+            for (int i = 0; i < detm.NumberHigh; i++)
             {
-                for (int j = 0; j < detm.L; j++)
+                for (int j = 0; j < detm.NumberLong; j++)
                 {
-                    detm.SS[j] = detm.tabl[j, i].ToString();
+                    detm.Matrix[j] = detm.tabl[j, i].ToString();
                 }
-                dataGridViewMatrixT.Rows.Add(detm.SS);
+                dataGridViewMatrixT.Rows.Add(detm.Matrix);
             }
         }
 

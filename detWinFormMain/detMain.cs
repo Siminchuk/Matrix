@@ -9,35 +9,44 @@ namespace detWinFormMain
 {
     class detMain
     {
-        Random r = new Random();
+        Random dimension = new Random();
         public double[,] tabl;
-        int k;
-        double dt;
         double det;
-        string[] ss;
-        int h;
-        int l;
+        string[] matrix;
+        int numberHigh;
+        int numberLong;
+        /// <summary>
+        /// Детермінант матриці.
+        /// </summary>
         public double Det
         {
             set { if (value > 0) det = value; }
             get { return det; }
         }
-        public double High
+        /// <summary>
+        /// Матриця.
+        /// </summary>
+        public string[] Matrix
         {
-            get { return dt; } //доступ тільки для зчитування
+            get { return matrix; }
         }
-        public int H
+        /// <summary>
+        /// Кількість символів в стовбчику матриці.
+        /// </summary>
+        public int NumberHigh
         {
-            get { return h; } //доступ тільки для зчитування
+            get { return numberHigh; } //доступ тільки для зчитування
         }
-        public int L
+        /// <summary>
+        /// Кількість символів в рядку матриці.
+        /// </summary>
+        public int NumberLong
         {
-            get { return l; } //доступ тільки для зчитування
+            get { return numberLong; } //доступ тільки для зчитування
         }
-        public string [] SS
-        {
-            get { return ss; }
-        }
+        /// <summary>
+        /// Визначення знаку елемента матриці для обрахунку детермінанту.
+        /// </summary>
         public int SignOfElement(int i, int j)
         {
             if ((i + j) % 2 == 0)
@@ -49,6 +58,9 @@ namespace detWinFormMain
                 return -1;
             }
         }
+        /// <summary>
+        /// Побудова мінора попередньої матриці.
+        /// </summary>
         public double[,] CreateSmallerMatrix(double[,] input, int i, int j)
         {
             int order = int.Parse(System.Math.Sqrt(input.Length).ToString());
@@ -75,6 +87,9 @@ namespace detWinFormMain
             }
             return output;
         }
+        /// <summary>
+        /// Обчислення детермінанту заданої матриці.
+        /// </summary>
         public double Determinant1(double[,] input)
         {
             int order = int.Parse(System.Math.Sqrt(input.Length).ToString());
@@ -104,7 +119,7 @@ namespace detWinFormMain
             {
                 for (int j = 0; j < b; j++)
                 {
-                    tabl[i, j] = r.Next(0, 10);
+                    tabl[i, j] = dimension.Next(0, 10);
                 }
             }
         }
@@ -122,14 +137,14 @@ namespace detWinFormMain
             {
                 recalculate(b);
                 det = Convert.ToDouble(Determinant1(tabl));
-                l = tabl.GetLength(0);
-                h = tabl.GetLength(1);
-                for (int i = 0; i < h; i++)
+                numberLong = tabl.GetLength(0);
+                numberHigh = tabl.GetLength(1);
+                for (int i = 0; i < numberHigh; i++)
                 {
-                    ss = new string[l];
-                    for (int j = 0; j < l; j++)
+                    matrix = new string[numberLong];
+                    for (int j = 0; j < numberLong; j++)
                     {
-                        ss[j] = tabl[i, j].ToString();
+                        matrix[j] = tabl[i, j].ToString();
                     }
                     
                 }
